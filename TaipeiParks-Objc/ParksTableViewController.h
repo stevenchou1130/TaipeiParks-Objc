@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
-#import "ParkModel.h"
 #import "ParkTableViewCell.h"
+#import "ParkProvider.h"
+#import "ParkModel.h"
+#import "Constants.h"
 
 @interface ParksTableViewController : UITableViewController
 

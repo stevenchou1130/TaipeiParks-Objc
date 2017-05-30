@@ -65,6 +65,9 @@
     self.isLoading = true;
 //    [self.activityIndicator startAnimating];
 
+    ParkProvider *parkProvider = ParkProvider.sharedInstance;
+    [parkProvider getParkDataWithLimitNum:30 withOffsetNum:0];
+
 }
 
 #pragma mark - Table view data source

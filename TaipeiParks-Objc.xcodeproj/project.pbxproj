@@ -16,6 +16,7 @@
 		B0165E021EDD6C0600F68FBA /* ParkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165E001EDD6C0600F68FBA /* ParkTableViewCell.m */; };
 		B0165E031EDD6C0600F68FBA /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0165E011EDD6C0600F68FBA /* ParkTableViewCell.xib */; };
 		B0165E071EDD916600F68FBA /* ParkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165E061EDD916600F68FBA /* ParkModel.m */; };
+		B0FA5CE41EDDBFF000A3A721 /* ParkProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FA5CE31EDDBFF000A3A721 /* ParkProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		B0165E041EDD8ED500F68FBA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B0165E051EDD916600F68FBA /* ParkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkModel.h; sourceTree = "<group>"; };
 		B0165E061EDD916600F68FBA /* ParkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkModel.m; sourceTree = "<group>"; };
+		B0FA5CE21EDDBFF000A3A721 /* ParkProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkProvider.h; sourceTree = "<group>"; };
+		B0FA5CE31EDDBFF000A3A721 /* ParkProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		B0165DFA1EDD6B3800F68FBA /* ParkProvider */ = {
 			isa = PBXGroup;
 			children = (
+				B0FA5CE21EDDBFF000A3A721 /* ParkProvider.h */,
+				B0FA5CE31EDDBFF000A3A721 /* ParkProvider.m */,
 				B0165E051EDD916600F68FBA /* ParkModel.h */,
 				B0165E061EDD916600F68FBA /* ParkModel.m */,
 			);
@@ -198,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FA5CE41EDDBFF000A3A721 /* ParkProvider.m in Sources */,
 				B0165E071EDD916600F68FBA /* ParkModel.m in Sources */,
 				B0165DFE1EDD6BBD00F68FBA /* ParksTableViewController.m in Sources */,
 				B0165DE61EDD684C00F68FBA /* AppDelegate.m in Sources */,
