@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParkTableViewCell" rowHeight="90" id="gi7-xF-0b4" customClass="ParkTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gi7-xF-0b4" id="l1h-4J-dtK">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="park" translatesAutoresizingMaskIntoConstraints="NO" id="PR8-XS-KKo">
+                        <rect key="frame" x="5" y="5" width="79.5" height="79.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="PR8-XS-KKo" secondAttribute="height" multiplier="1:1" id="Ggb-Xl-xcO"/>
+                            <constraint firstAttribute="height" constant="79.5" id="eHV-hV-gVP"/>
+                            <constraint firstAttribute="width" constant="79.5" id="nQz-2C-7t7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="ParkName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T90-O6-MY9">
+                        <rect key="frame" x="94.5" y="10.5" width="220.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjf-0f-JVG">
+                        <rect key="frame" x="94.5" y="38.5" width="220.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2d-as-yE7">
+                        <rect key="frame" x="94.5" y="66.5" width="220.5" height="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="U2d-as-yE7" secondAttribute="bottom" constant="10" id="31u-hE-RLQ"/>
+                    <constraint firstAttribute="trailing" secondItem="T90-O6-MY9" secondAttribute="trailing" constant="5" id="7rJ-fT-BNF"/>
+                    <constraint firstItem="xjf-0f-JVG" firstAttribute="top" secondItem="T90-O6-MY9" secondAttribute="bottom" constant="10" id="Afj-tK-LNS"/>
+                    <constraint firstItem="U2d-as-yE7" firstAttribute="leading" secondItem="xjf-0f-JVG" secondAttribute="leading" id="Cex-uS-Pnd"/>
+                    <constraint firstItem="PR8-XS-KKo" firstAttribute="centerY" secondItem="l1h-4J-dtK" secondAttribute="centerY" id="JXI-Iq-CAq"/>
+                    <constraint firstItem="U2d-as-yE7" firstAttribute="top" secondItem="xjf-0f-JVG" secondAttribute="bottom" constant="10" id="Jlb-lf-Fhs"/>
+                    <constraint firstItem="xjf-0f-JVG" firstAttribute="leading" secondItem="T90-O6-MY9" secondAttribute="leading" id="MsS-gJ-iKs"/>
+                    <constraint firstItem="PR8-XS-KKo" firstAttribute="leading" secondItem="l1h-4J-dtK" secondAttribute="leading" constant="5" id="fxY-ab-Ya7"/>
+                    <constraint firstItem="T90-O6-MY9" firstAttribute="leading" secondItem="PR8-XS-KKo" secondAttribute="trailing" constant="10" id="pTc-Gc-BSv"/>
+                    <constraint firstItem="xjf-0f-JVG" firstAttribute="trailing" secondItem="T90-O6-MY9" secondAttribute="trailing" id="tcz-J9-jen"/>
+                    <constraint firstItem="T90-O6-MY9" firstAttribute="top" secondItem="l1h-4J-dtK" secondAttribute="top" constant="10" id="vR3-2u-bvH"/>
+                    <constraint firstItem="U2d-as-yE7" firstAttribute="trailing" secondItem="xjf-0f-JVG" secondAttribute="trailing" id="z1z-qF-Zbm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="introductionLabel" destination="U2d-as-yE7" id="a2A-pf-4HE"/>
+                <outlet property="nameLabel" destination="xjf-0f-JVG" id="KV3-Tt-e2o"/>
+                <outlet property="parkImageView" destination="PR8-XS-KKo" id="K29-cS-Drw"/>
+                <outlet property="parkNameLabel" destination="T90-O6-MY9" id="MvO-sl-Te6"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="61"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="park" width="512" height="512"/>
+    </resources>
+</document>

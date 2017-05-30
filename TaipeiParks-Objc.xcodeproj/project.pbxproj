@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		B0165DE31EDD684C00F68FBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165DE21EDD684C00F68FBA /* main.m */; };
 		B0165DE61EDD684C00F68FBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165DE51EDD684C00F68FBA /* AppDelegate.m */; };
-		B0165DE91EDD684C00F68FBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165DE81EDD684C00F68FBA /* ViewController.m */; };
 		B0165DEC1EDD684C00F68FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0165DEA1EDD684C00F68FBA /* Main.storyboard */; };
 		B0165DEE1EDD684C00F68FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0165DED1EDD684C00F68FBA /* Assets.xcassets */; };
 		B0165DF11EDD684C00F68FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0165DEF1EDD684C00F68FBA /* LaunchScreen.storyboard */; };
+		B0165DFE1EDD6BBD00F68FBA /* ParksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165DFD1EDD6BBD00F68FBA /* ParksTableViewController.m */; };
+		B0165E021EDD6C0600F68FBA /* ParkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0165E001EDD6C0600F68FBA /* ParkTableViewCell.m */; };
+		B0165E031EDD6C0600F68FBA /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0165E011EDD6C0600F68FBA /* ParkTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +22,15 @@
 		B0165DE21EDD684C00F68FBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0165DE41EDD684C00F68FBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0165DE51EDD684C00F68FBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B0165DE71EDD684C00F68FBA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B0165DE81EDD684C00F68FBA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B0165DEB1EDD684C00F68FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0165DED1EDD684C00F68FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0165DF01EDD684C00F68FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0165DF21EDD684C00F68FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0165DFC1EDD6BBD00F68FBA /* ParksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParksTableViewController.h; sourceTree = "<group>"; };
+		B0165DFD1EDD6BBD00F68FBA /* ParksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParksTableViewController.m; sourceTree = "<group>"; };
+		B0165DFF1EDD6C0600F68FBA /* ParkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkTableViewCell.h; sourceTree = "<group>"; };
+		B0165E001EDD6C0600F68FBA /* ParkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkTableViewCell.m; sourceTree = "<group>"; };
+		B0165E011EDD6C0600F68FBA /* ParkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParkTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +63,12 @@
 		B0165DE01EDD684C00F68FBA /* TaipeiParks-Objc */ = {
 			isa = PBXGroup;
 			children = (
+				B0165DF81EDD6B2100F68FBA /* MainPage */,
+				B0165DF91EDD6B3000F68FBA /* Cell */,
+				B0165DFA1EDD6B3800F68FBA /* ParkProvider */,
+				B0165DFB1EDD6B4A00F68FBA /* Constants */,
 				B0165DE41EDD684C00F68FBA /* AppDelegate.h */,
 				B0165DE51EDD684C00F68FBA /* AppDelegate.m */,
-				B0165DE71EDD684C00F68FBA /* ViewController.h */,
-				B0165DE81EDD684C00F68FBA /* ViewController.m */,
-				B0165DEA1EDD684C00F68FBA /* Main.storyboard */,
 				B0165DED1EDD684C00F68FBA /* Assets.xcassets */,
 				B0165DEF1EDD684C00F68FBA /* LaunchScreen.storyboard */,
 				B0165DF21EDD684C00F68FBA /* Info.plist */,
@@ -77,6 +83,40 @@
 				B0165DE21EDD684C00F68FBA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0165DF81EDD6B2100F68FBA /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				B0165DFC1EDD6BBD00F68FBA /* ParksTableViewController.h */,
+				B0165DFD1EDD6BBD00F68FBA /* ParksTableViewController.m */,
+				B0165DEA1EDD684C00F68FBA /* Main.storyboard */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		B0165DF91EDD6B3000F68FBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B0165DFF1EDD6C0600F68FBA /* ParkTableViewCell.h */,
+				B0165E001EDD6C0600F68FBA /* ParkTableViewCell.m */,
+				B0165E011EDD6C0600F68FBA /* ParkTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		B0165DFA1EDD6B3800F68FBA /* ParkProvider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ParkProvider;
+			sourceTree = "<group>";
+		};
+		B0165DFB1EDD6B4A00F68FBA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +180,7 @@
 				B0165DF11EDD684C00F68FBA /* LaunchScreen.storyboard in Resources */,
 				B0165DEE1EDD684C00F68FBA /* Assets.xcassets in Resources */,
 				B0165DEC1EDD684C00F68FBA /* Main.storyboard in Resources */,
+				B0165E031EDD6C0600F68FBA /* ParkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0165DE91EDD684C00F68FBA /* ViewController.m in Sources */,
+				B0165DFE1EDD6BBD00F68FBA /* ParksTableViewController.m in Sources */,
 				B0165DE61EDD684C00F68FBA /* AppDelegate.m in Sources */,
 				B0165DE31EDD684C00F68FBA /* main.m in Sources */,
+				B0165E021EDD6C0600F68FBA /* ParkTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
