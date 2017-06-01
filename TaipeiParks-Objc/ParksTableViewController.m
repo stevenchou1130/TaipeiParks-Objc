@@ -86,7 +86,7 @@
 
     // todo: chech url is correct one
 
-    parkImageView.image = nil;
+    parkImageView.image = [UIImage imageNamed:@"park"];
 
     UIImage *imageFromCache = [self.imageCache objectForKey:park.image];
     if (imageFromCache != nil) {
@@ -104,7 +104,6 @@
             UIImage *image = [UIImage imageWithData:imageData];
 
             if (image != nil) {
-
                 dispatch_async(dispatch_get_main_queue(), ^{
 
                     UIImage *imageToCache = [image resizableImageWithCapInsets: UIEdgeInsetsMake(0, 0, 0, 0) resizingMode: UIImageResizingModeStretch];
@@ -113,9 +112,8 @@
 
                     parkImageView.image = [self.imageCache objectForKey:park.image];
                     parkImageView.contentMode = UIViewContentModeScaleAspectFit;
-
+                    
                 });
-
             }
 
         } @catch (NSException *exception) {
