@@ -44,7 +44,6 @@
 }
 
 -(void)setView {
-    NSLog(@"setView");
 
     self.navigationItem.title = @"Taipei City Parks";
 
@@ -60,7 +59,6 @@
 }
 
 -(void)loadParkData {
-    NSLog(@"loadParkData");
 
     self.isLoading = true;
     [self.activityIndicator startAnimating];
@@ -82,6 +80,54 @@
 
     }];
 
+}
+
+-(void) setCellImageWithPark:(ParkModel*)park withImageView:(UIImageView*)parkImageView {
+
+    // todo: chech url is correct one
+
+    parkImageView.image = nil;
+
+    UIImage *imageFromCache = [self.imageCache objectForKey:park.image];
+    if (imageFromCache != nil) {
+        parkImageView.image = imageFromCache;
+        return;
+    }
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        NSURL *imageURL = [NSURL URLWithString:park.image];
+
+        @try {
+
+            NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+            UIImage *image = [UIImage imageWithData:imageData];
+
+            if (image != nil) {
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+                    UIImage *imageToCache = [image resizableImageWithCapInsets: UIEdgeInsetsMake(0, 0, 0, 0) resizingMode: UIImageResizingModeStretch];
+
+                    [self.imageCache setObject:imageToCache forKey:park.image];
+
+                    parkImageView.image = [self.imageCache objectForKey:park.image];
+                    parkImageView.contentMode = UIViewContentModeScaleAspectFit;
+
+                });
+
+            }
+
+        } @catch (NSException *exception) {
+
+            NSLog(@"Exception:%@",exception);
+
+        } @finally {
+
+            // finally
+        }
+
+    });
 }
 
 #pragma mark - Table view data source
@@ -107,12 +153,13 @@
 
     ParkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"ParkTableViewCell" forIndexPath:indexPath];
 
-    // todo: Configure the cell...
-
     ParkModel *park = self.parksList[indexPath.row];
+
     cell.parkNameLabel.text = park.parkName;
     cell.nameLabel.text = park.name;
     cell.introductionLabel.text = park.introduction;
+
+    [self setCellImageWithPark:park withImageView:cell.parkImageView];
 
     return cell;
 }
@@ -124,18 +171,10 @@
     if(indexPath.row == lastElement) {
         if (self.isLoading == false) {
 
-            NSLog(@"=== lastElement -> loadParkData");
             self.offsetNum += self.limitNum;
             [self loadParkData];
         }
     }
-
-}
-
--(void) setCellImageWithPark:(ParkModel*)park withImageView:(UIImageView*)parkImageView {
-
-    parkImageView.image = nil;
-
 }
 
 @end

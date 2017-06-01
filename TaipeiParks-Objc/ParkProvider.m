@@ -30,8 +30,6 @@
 
     NSString *urlWithParams = [NSString stringWithFormat:@"%@&limit=%d&offset=%d", urlString , limitNum, offsetNum];
 
-    NSLog(@"%@", urlWithParams);
-
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlWithParams]];
     [request setHTTPMethod:@"GET"];
 
@@ -49,7 +47,6 @@
 
                 switch (httpResponse.statusCode) {
                     case 200:
-                        NSLog(@"statusCode is 200.");
 
                         parkArray = [self parseParkJSON:data];
 
@@ -76,9 +73,12 @@
     NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
     if (jsonError) {
+
         // Error Parsing JSON
         NSLog(@"===Error: %@", jsonError);
+
     } else {
+
         // Success Parsing JSON
         NSDictionary *jsonObject = (NSDictionary *)jsonResponse;
         if (jsonObject == nil) {
