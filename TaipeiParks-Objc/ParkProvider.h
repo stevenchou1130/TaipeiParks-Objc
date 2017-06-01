@@ -11,10 +11,10 @@
 
 @interface ParkProvider : NSObject
 
-+(instancetype)sharedInstance;
++(instancetype _Nullable )sharedInstance;
 
--(void)getParkDataWithLimitNum:(int)limitNum withOffsetNum:(int)offsetNum;
+-(void)getParkDataWithLimitNum:(int)limitNum withOffsetNum:(int)offsetNum withCompletionHandler:(void (^__nonnull)(NSMutableArray<ParkModel *> * __nullable parkArray, NSError * __nullable error)) completionHandler;
 
--(NSMutableArray<ParkModel *> *)parseParkJSON: (NSData *)data;
+-(NSMutableArray<ParkModel *> *_Nullable)parseParkJSON: (NSData *_Nullable)data;
 
 @end

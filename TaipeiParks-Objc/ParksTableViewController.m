@@ -63,10 +63,24 @@
     NSLog(@"loadParkData");
 
     self.isLoading = true;
-//    [self.activityIndicator startAnimating];
+    [self.activityIndicator startAnimating];
 
     ParkProvider *parkProvider = ParkProvider.sharedInstance;
-    [parkProvider getParkDataWithLimitNum:30 withOffsetNum:0];
+    [parkProvider getParkDataWithLimitNum:self.limitNum withOffsetNum:self.offsetNum withCompletionHandler:^(NSMutableArray<ParkModel *> * _Nullable parkArray, NSError * _Nullable error) {
+
+        if (!error) {
+
+            [self.parksList addObjectsFromArray:parkArray];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            self.isLoading = false;
+            [self.activityIndicator stopAnimating];
+            [self.tableView reloadData];
+        });
+
+    }];
 
 }
 
@@ -78,7 +92,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return self.parksList.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,10 +106,36 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     ParkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"ParkTableViewCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+
+    // todo: Configure the cell...
+
+    ParkModel *park = self.parksList[indexPath.row];
+    cell.parkNameLabel.text = park.parkName;
+    cell.nameLabel.text = park.name;
+    cell.introductionLabel.text = park.introduction;
+
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    unsigned long int lastElement = self.parksList.count - 1;
+
+    if(indexPath.row == lastElement) {
+        if (self.isLoading == false) {
+
+            NSLog(@"=== lastElement -> loadParkData");
+            self.offsetNum += self.limitNum;
+            [self loadParkData];
+        }
+    }
+
+}
+
+-(void) setCellImageWithPark:(ParkModel*)park withImageView:(UIImageView*)parkImageView {
+
+    parkImageView.image = nil;
+
 }
 
 @end
